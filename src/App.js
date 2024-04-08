@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Project from './components/Project';
+import { BrowserRouter as Router, Routes, Switch, Route, Redirect} from 'react-router-dom';
+import Navbar from './components/Navbar';
+import ProjectDetails from './pages/ProjectDetails';
+import Home from './pages/Home';
+import ProjectTabsDisplay from './pages/ProjectTabsDisplay';
+import Login from './pages/Login';
+import { useState } from 'react';
 
 function App() {
+  const [ isAuthenticated, setIsAuthenticated ] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category/:category" element={<ProjectTabsDisplay />} />
+        <Route path="/project/:userId" element={<ProjectDetails />} />
+
+        { isAuthenticated ? <Route path="/add-project" element={<Project />} /> : <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} /> }
+      </Routes>
+
+    </Router>
   );
 }
 
