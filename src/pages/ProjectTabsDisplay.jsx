@@ -11,7 +11,7 @@ function ProjectTabsDisplay() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await Axios.get(`https://project-catalouge-backend.vercel.app/project/category/${category}`); // Use backticks for string interpolation
+        const response = await Axios.get(`https://legit-geese-production.up.railway.app/project/category/${category}`); // Use backticks for string interpolation
         const formattedProjects = response.data.map(project => ({
           ...project,
           imageUrl: project.imageUrl.replace(/\\/g, '/'), // Convert backslashes to forward slashes

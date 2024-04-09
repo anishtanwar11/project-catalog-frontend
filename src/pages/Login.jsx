@@ -23,7 +23,7 @@ function Login({ setIsAuthenticated }) {
     const handelSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await Axios.post("https://project-catalouge-backend.vercel.app/auth/login", formData);
+            const response = await Axios.post("https://legit-geese-production.up.railway.app/auth/login", formData);
             console.log(response.data);
             toggle();
             setFormData({

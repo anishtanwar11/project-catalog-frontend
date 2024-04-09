@@ -10,7 +10,7 @@ function ProjectDetails() {
   useEffect(() => {
     async function fetchProjectDetails() {
       try {
-        const response = await Axios.get("https://project-catalouge-backend.vercel.app/project/" + userId);
+        const response = await Axios.get("https://legit-geese-production.up.railway.app/project/" + userId);
         setProject(response.data);
       } catch (error) {
         console.error('Error fetching project details:', error);

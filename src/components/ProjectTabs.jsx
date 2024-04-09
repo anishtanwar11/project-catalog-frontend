@@ -9,7 +9,7 @@ function ProjectTabs() {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get("https://project-catalouge-backend.vercel.app/category");
+                const response = await axios.get("https://legit-geese-production.up.railway.app/category");
                 setCategories(response.data);
                 const storedActiveCategory = localStorage.getItem('activeCategory');
                 if (storedActiveCategory && response.data.find(category => category.category === storedActiveCategory)) {
@@ -41,7 +41,7 @@ function ProjectTabs() {
                             className='text-[13px] md:text-[17px] py-2 px-4 w-[80px] md:w-[100px] justify-center items-start flex'
                             onClick={() => handleCategoryClick(category.category)}
                         >
-                            <a href={`https://project-catalouge-backend.vercel.app/project/category/${category.category}`}>
+                            <a href={`https://legit-geese-production.up.railway.app/project/category/${category.category}`}>
                                 {category.category}
                             </a>
                         </Link>

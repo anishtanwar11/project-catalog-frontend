@@ -9,7 +9,7 @@ function ProjectDisplay() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await Axios.get('https://project-catalouge-backend.vercel.app/project');
+        const response = await Axios.get('https://legit-geese-production.up.railway.app/project');
         const formattedProjects = response.data.map(project => ({
           ...project,
           imageUrl: project.imageUrl.replace(/\\/g, '/'), // Convert backslashes to forward slashes
