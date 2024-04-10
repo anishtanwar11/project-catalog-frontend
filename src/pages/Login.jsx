@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 function Login({ setIsAuthenticated }) {
 
     const [showPassword, setShowPassword] = useState(false);
@@ -30,10 +32,11 @@ function Login({ setIsAuthenticated }) {
                 username: '',
                 password: ''
             })
-            alert("Login Successfully...")
+            toast.success("Login Successfully...")
             navigate('/')
         } catch (error) {
             console.log("Error Login user", error);
+            toast.error("Only admin can login...")
         }
     }
 

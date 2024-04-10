@@ -23,20 +23,20 @@ function ProjectDetails() {
   return (
     <div>
       {project && (
-        <div className='flex justify-center w-full mt-20 md:mt-32 px-4 mb-10 mg:mb-0'>
+        <div className='flex justify-center w-full mt-20 md:mt-32 px-4 mb-10'>
           <div className='flex flex-col lg:flex-row gap-8 p-6 md:p-8 w-full max-w-[1250px] border-[1px] border-opacity-20 rounded-xl border-slate-300 bg-[#14181A]'>
             <div className='flex lg:w-1/2 rounded-xl overflow-hidden justify-center items-center bg-[#94a3b8] md:p-4'>
-              <img src={project.imageUrl} alt="Project Image" className='max-w-[530px] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]' />
+              <img src={project.imageUrl} alt="Project Image" className='md:max-w-[530px] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]' />
             </div>
             <div className='lg:w-1/2 flex flex-col gap-4'>
-              <div className='flex justify-between'>
+              <div className='flex justify-between items-center'>
                 <div className='flex gap-2'>
-                  <h2 className='text-white text-2xl uppercase tracking-wider font-medium'>{project.name}</h2>
+                  <h2 className='text-white text-[1rem] md:text-2xl uppercase tracking-wider font-medium'>{project.name}</h2>
                   <div className='text-[#f59e0b]'>
                     <i class="ri-star-s-fill"></i>
                   </div>
                 </div>
-                <p className='border-[1px] border-opacity-20 rounded-[20px] border-slate-300 py-2 px-8'>{project.category}</p>
+                <p className='border-[1px] text-[15px] border-opacity-20 rounded-[20px] border-slate-300 py-1 md:py-2 px-4 md:px-8'>{project.category}</p>
               </div>
               <div>
                 <p className='text-[15px] font-medium'>Technologies</p>

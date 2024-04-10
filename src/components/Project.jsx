@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Axios from 'axios';
 import Footer from '../components/Footer'
+import { toast } from 'react-toastify';
 
 function Project() {
     const [category, setCategory] = useState('');
@@ -15,9 +16,10 @@ function Project() {
             const response = await Axios.post("https://legit-geese-production.up.railway.app/category", { category });
             console.log(response.data);
             setCategory('');
-            alert("category created");
+            toast.success("category created");
         } catch (error) {
             console.log("Error in creating the project category : ", error);
+            toast.error("Failed to create!");
         }
     }
 
@@ -72,9 +74,10 @@ function Project() {
                 sourceCodeLink: '',
                 imageUrl: ''
             });
-            alert("Successfully added new project!");
+            toast.success("Successfully added new project!");
         } catch (error) {
             console.error("Error adding new project", error);
+            toast.error("Failed to create!");
         }
     }
 

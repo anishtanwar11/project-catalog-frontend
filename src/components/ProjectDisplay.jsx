@@ -24,15 +24,15 @@ function ProjectDisplay() {
   }, []);
 
   return (
-    <div className='w-full justify-center flex md:max-w-[1250px] px-4 md:px-4 lg:px-0'>
-      <div className='w-full'>
+    <div className='w-full justify-center flex px-4'>
+      <div className='w-full max-w-[1250px]'>
         <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {projects.map(project => (
             <li key={project._id} className='border-[1px] border-slate-300 border-opacity-20 bg-[#14181A] p-2 rounded-[15px]'>
               {/* Link to Details Page */}
               <Link to={`/project/${project._id}`}>
-                <div className='rounded-[15px] overflow-hidden h-[200px] object-cover'>
-                  <img src={project.imageUrl} alt="Project Image" className='w-full object-fill' />
+                <div className='rounded-[15px] overflow-hidden h-[200px] sm:h-[280px] md:h-[200px] object-cover flex items-center justify-center'>
+                  <img src={project.imageUrl} alt="Project Image" className='object-cover h-full w-[200%] object-fill' />
                 </div>
 
                 <div className='p-4 flex flex-col gap-4'>
