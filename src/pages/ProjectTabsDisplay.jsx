@@ -49,7 +49,7 @@ function ProjectTabsDisplay() {
                       <i class="ri-star-s-fill"></i>
                     </div>
                   </div>
-                  <p className='text-[15px] font-normal text-justify'>{project.description}</p>
+                  <p className='text-[15px] font-normal text-justify truncate '>{project.description}</p>
                 </div>
 
               </Link>
